@@ -7,6 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
+import br.com.fernando.control_password.app.ControlPasswordApplication;
+import br.com.fernando.control_password.component.ControlPasswordComponent;
+import br.com.fernando.control_password.service.ControlPasswordService;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -19,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
+    @Inject
+    ControlPasswordService controlPasswordService;
+
+    private ControlPasswordComponent component;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this );
+
+        component = ((ControlPasswordApplication) getApplication()).getComponent();
+        component.inject( this );
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
