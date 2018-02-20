@@ -18,6 +18,12 @@ public class FragmentUtil {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
+    public static void replaceFragmentWithBackStack(FragmentManager fragmentManager, int container, Fragment newFragment) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(container, newFragment).addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     public static void closeKeyboard(Activity activity) {
 
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -2,6 +2,6 @@
     <stroke
         android:width="0dp"
         android:color="@color/color_accent_disable" />
-    <corners android:radius="30dp" />
+    <corners android:radius="10dp" />
     <solid android:color="@color/color_accent_disable" />
 </shape>

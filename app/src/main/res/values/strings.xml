@@ -15,5 +15,6 @@
     <string name="title_welcome_frag_reg_password">Isso fica entre nos</string>
     <string name="prompt_senha">SENHA</string>
     <string name="action_finalize">FINALIZAR</string>
+    <string name="error_email_register">E-mail inválido</string>
 
 </resources>

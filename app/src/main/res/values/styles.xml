@@ -15,8 +15,6 @@
     </style>
 
     <style name="ButtonDefault" parent="@style/Widget.AppCompat.Button.Borderless">
-        <item name="android:letterSpacing">0.1</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:background">@drawable/btn_rounded_selector</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_gravity">center</item>
@@ -33,6 +31,11 @@
         <item name="colorPrimary">@color/colorTilHintActive</item>
         <item name="colorControlActivated">@color/colorTilHintActive</item>
         <item name="android:textColorHighlight">@color/colorTilHintActive</item>
+    </style>
+
+    <style name="error_appearance_til" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red_error</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
 </resources>

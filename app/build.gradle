@@ -21,6 +21,10 @@ android {
             buildConfigField "String", "API_CONTROL_PASSWORD_URL", "\"http://192.168.122.1:8080/\""
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -47,4 +51,6 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:8.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.0.1'
+
+    implementation 'com.hannesdorfmann.mosby:mvp:2.0.1'
 }
