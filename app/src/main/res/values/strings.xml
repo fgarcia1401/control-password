@@ -3,4 +3,17 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_welcome_frag_reg_name">Bem vindo!</string>
+    <string name="subtitle_frag_reg_name">Para começar,\ngostaríamos de saber seu nome</string>
+    <string name="prompt_complete_name">NOME COMPLETO</string>
+    <string name="action_continuous">CONTINUAR</string>
+    <string name="prompt_email">E-MAIL</string>
+    <string name="title_welcome_frag_reg_email">Prazer, Fernando!</string>
+    <string name="subtitle_frag_reg_email">Para acessar sua conta, nos informe seu e-mail.</string>
+    <string name="subtitle_frag_reg_senha">Nos informe sua senha (Mínimo 8 caracteres, dos
+        quais deve possuir no mínimo 1 letra, 1 número e 1 caractere especial).</string>
+    <string name="title_welcome_frag_reg_password">Isso fica entre nos</string>
+    <string name="prompt_senha">SENHA</string>
+    <string name="action_finalize">FINALIZAR</string>
+
 </resources>

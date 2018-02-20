@@ -5,7 +5,7 @@ import android.app.Application;
 import java.util.concurrent.TimeUnit;
 
 import br.com.fernando.control_password.BuildConfig;
-import br.com.fernando.control_password.service.ControlPasswordService;
+import br.com.fernando.control_password.api.ControlPasswordService;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.logging.HttpLoggingInterceptor;

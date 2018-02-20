@@ -2,5 +2,65 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#303F9F</color>
+    <color name="color_accent_disable">#3F51B5</color>
+    <color name="colorAccentDark">#D56400</color>
+    <color name="secondaryColor">#7E5DBE</color>
+    <color name="colorSubtitle">#1D1D26</color>
+    <color name="colorSubtitle2">#999999</color>
+    <color name="colorVersion">#69464750</color>
+
+    <color name="colorError">#FFCB2A2A</color>
+
+    <color name="colorRadioText">#1d1d26</color>
+    <color name="colorTilNormal">#a8a8aa</color>
+    <color name="colorTilHintActive">#ffa039</color>
+
+    <color name="colorTvEdit">#00b4ff</color>
+
+    <color name="colorMsgAlertDialog">#8e8e93</color>
+
+
+    <color name="colorBorderCardMain">#ffd200</color>
+    <color name="colorBorderCard">#ebebeb</color>
+
+
+    <color name="red_error">#FFCB2A2A</color>
+    <color name="warning_password">#801d1d26</color>
+
+    <color name="blackTransparent">#44000000</color>
+
+    <color name="pin_normal">#6B767E</color>
+
+    <color name="extract_positive_color">#70b73f</color>
+
+    <color name="divisor_item_card_list">#eaeaea</color>
+
+    <color name="header_top">#B3E541</color>
+
+    <color name="header_bottom">#40c5aa</color>
+
+    <color name="text_input_layout_hint_color">#FF1D1D26</color>
+
+    <color name="empty_photo_user_color">#cccccc</color>
+
+    <color name="main_text_item_color">#000</color>
+
+    <color name="background_contacts_out_pagseguro_color">#fafafa</color>
+    <color name="background_invite">#FFFAFAFA</color>
+
+    <color name="title_select_card_transfer">#363844</color>
+
+    <color name="status_bar_success_transfer">#00A087</color>
+
+    <color name="status_bar_error_transfer">#C67528</color>
+
+    <color name="white_color">#ffffff</color>
+
+    <color name="til_line_color">#f2f2f2</color>
+
+    <color name="tooltip_color">#FF282828</color>
+
+    <color name="text_transfer_color">#8A000000</color>
+
 </resources>

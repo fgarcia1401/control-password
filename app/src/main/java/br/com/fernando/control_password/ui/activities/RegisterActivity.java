@@ -1,13 +1,8 @@
-package br.com.fernando.control_password;
+package br.com.fernando.control_password.ui.activities;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.widget.TextView;
-
-import butterknife.BindView;
+import br.com.fernando.control_password.R;
 import butterknife.ButterKnife;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -20,6 +15,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         ButterKnife.bind(this );
 
+    }
+
+    private void start() {
+        /*FragmentUtil.addFragment(getSupportFragmentManager(),
+                R.id.fragment_container, new RegisterNameFragment()); */
     }
 
 }

@@ -1,0 +1,72 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:persistentDrawingCache="all">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/title_margin_top_fragments"
+        android:paddingEnd="@dimen/big_gap"
+        android:paddingStart="@dimen/big_gap"
+        android:paddingTop="@dimen/title_margin_top_fragments">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingExtra="@dimen/line_spacing_extra_subtitle"
+            android:paddingBottom="@dimen/subtitle_gap"
+            android:text="@string/title_welcome_frag_reg_password"
+            android:textColor="@color/colorSubtitle"
+            android:textSize="@dimen/big_text_size" />
+
+
+        <TextView
+            android:id="@+id/tv_title_frag_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingExtra="@dimen/line_spacing_extra_subtitle"
+            android:text="@string/subtitle_frag_reg_senha"
+            android:textColor="@color/colorSubtitle2"
+            android:textSize="@dimen/large_text_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/primaryAppearanceTil">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_senha"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/colorSubtitle"
+                    android:textSize="14sp" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <br.com.fernando.control_password.ui.widgets.CustomButton
+            android:id="@+id/bt_finalizar"
+            style="@style/ButtonDefault"
+            android:layout_width="248dp"
+            android:layout_height="48dp"
+            android:text="@string/action_finalize" />
+    </LinearLayout>
+</ScrollView>

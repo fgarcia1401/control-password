@@ -1,4 +1,4 @@
-package br.com.fernando.control_password;
+package br.com.fernando.control_password.ui.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,9 +9,10 @@ import android.widget.TextView;
 
 import javax.inject.Inject;
 
+import br.com.fernando.control_password.R;
 import br.com.fernando.control_password.app.ControlPasswordApplication;
 import br.com.fernando.control_password.component.ControlPasswordComponent;
-import br.com.fernando.control_password.service.ControlPasswordService;
+import br.com.fernando.control_password.api.ControlPasswordService;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
