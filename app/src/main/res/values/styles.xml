@@ -22,6 +22,22 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
+    <style name="DefaultLogin" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHighlight">@android:color/white</item>
+        <item name="android:textColorLink">@android:color/white</item>
+    </style>
+
+    <style name="ErrorLogin" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+
     <style name="primaryAppearanceTil" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/colorTilHintActive</item>
         <item name="android:textSize">12sp</item>

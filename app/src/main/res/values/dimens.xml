@@ -31,4 +31,9 @@
     <dimen name="small_text_size_plus">13sp</dimen>
     <dimen name="small_text_size">12sp</dimen>
 
+    <!-- Margin, width button -->
+    <dimen name="button_margin">40dp</dimen>
+    <dimen name="button_width">247dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+
 </resources>

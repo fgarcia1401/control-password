@@ -16,5 +16,14 @@
     <string name="prompt_senha">SENHA</string>
     <string name="action_finalize">FINALIZAR</string>
     <string name="error_email_register">E-mail inválido</string>
+    <string name="title_password_frag_reg">Isso fica entre nós</string>
+    <string name="subtitle_password_frag_reg">Para sua segurança temos algumas regrinhas para criar sua senha</string>
+    <string name="warning_password_register">A senha deve ter pelo menos 8 caracteres. Use ao menos um número, uma letra e um símbolo (!@#$%^&amp;*).</string>
+    <string name="prompt_password_registered">SENHA</string>
+    <string name="prompt_password">Senha</string>
+    <string name="login">ENTRAR</string>
+    <string name="login_digital">ENTRAR COM DIGITAL</string>
+    <string name="signup">CRIAR CONTA</string>
+    <string name="txt_save_login">Lembrar dados</string>
 
 </resources>
