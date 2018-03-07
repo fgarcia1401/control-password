@@ -8,18 +8,16 @@
     tools:context="br.com.fernando.control_password.ui.activities.MainActivity">
 
     <include
-        android:id="@+id/layout_toolbar"
         layout="@layout/layout_toolbar" />
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="@string/title_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

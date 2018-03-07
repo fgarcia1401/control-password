@@ -24,6 +24,8 @@ import br.com.fernando.control_password.model.ResponseApi;
 import br.com.fernando.control_password.model.ResponseErrorApi;
 import br.com.fernando.control_password.presentation.contract.LoginView;
 import br.com.fernando.control_password.presentation.presenter.LoginPresenter;
+import br.com.fernando.control_password.ui.activities.LoginActivity;
+import br.com.fernando.control_password.ui.activities.MainActivity;
 import br.com.fernando.control_password.ui.activities.RegisterActivity;
 import br.com.fernando.control_password.util.FragmentUtil;
 import butterknife.BindView;
@@ -32,18 +34,26 @@ import butterknife.OnClick;
 
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.multidots.fingerprintauth.FingerPrintAuthCallback;
 import com.multidots.fingerprintauth.FingerPrintAuthHelper;
 
+import org.w3c.dom.Text;
+
 import javax.inject.Inject;
+
+import static android.view.View.*;
 
 
 public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
         implements LoginView, FingerPrintAuthCallback {
 
+
+    @BindView(R.id.tv_digital)
+    TextView mTvDigital;
 
     @BindView(R.id.input_email)
     EditText mInputEmail;
@@ -91,6 +101,12 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
 
         mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(getContext(), this);
 
+        boolean fingerPrintAuthenticate = DataStorage.getInstance(getContext()).getFingerPrintAuthenticate();
+        if ( fingerPrintAuthenticate ) {
+            mTvDigital.setVisibility(VISIBLE);
+        } else {
+            mTvDigital.setVisibility(GONE);
+        }
     }
 
     @Override
@@ -111,6 +127,7 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
 
     private void populateLogin() {
         String password = DataStorage.getInstance(getContext()).getPassword();
+
         if( !TextUtils.isEmpty(password) ) {
            String email = DataStorage.getInstance(getContext()).getEmail();
            mInputEmail.setText(email);
@@ -136,6 +153,11 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
             this.showErrorValidate();
         }
 
+    }
+
+    @OnClick(R.id.tv_digital)
+    public void callFingerPrint() {
+        ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance());
     }
 
     private boolean validateLogin() {
@@ -170,13 +192,25 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
             DataStorage.getInstance(getContext()).setPassword(mInputPassword.getText().toString());
         } else {
             DataStorage.getInstance(getContext()).setPassword("");
-
         }
 
         DataStorage.getInstance(getContext()).setToken(responseApi.getToken());
         DataStorage.getInstance(getContext()).setEmail(mInputEmail.getText().toString());
 
+        boolean fingerPrintFirstTime = DataStorage.getInstance(getContext()).getFingerPrintFirstTime();
+        if(fingerPrinterAvailable && fingerPrintFirstTime){
+            ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance());
+        } else {
+            this.callMain();
+        }
+
     }
+
+    private void callMain() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void showError(ResponseErrorApi body) {

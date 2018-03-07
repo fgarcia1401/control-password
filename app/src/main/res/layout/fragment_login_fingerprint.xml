@@ -5,63 +5,72 @@
     android:background="@color/colorPrimary"
     android:fillViewport="true">
 
-    <RelativeLayout
-        android:id="@+id/screen_login"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
 
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="76dp"
-            android:gravity="center"
-            android:text="@string/title_welcome_frag_reg_name"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/big_text_size" />
+        <RelativeLayout
+            android:id="@+id/screen_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-        <ImageView
-            android:id="@+id/image_finger_print"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_welcome"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="76dp"
-            android:src="@drawable/ic_fingerprint_white_48dp" />
-
-        <TextView
-            android:id="@+id/tv_use_digital"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image_finger_print"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="103dp"
-            android:gravity="center"
-            android:text="@string/text_use_digital"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/big_text_size" />
-
-        <br.com.fernando.control_password.ui.widgets.CustomButton
-            android:id="@+id/bt_cancelar"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="@dimen/button_height"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/btn_rounded_white"
-            android:fontFamily="sans-serif"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:letterSpacing="0.12"
-            android:text="@string/cancel"
-            android:textColor="@color/colorAccent"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="76dp"
+                android:gravity="center"
+                android:text="@string/title_welcome_frag_reg_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/big_text_size" />
 
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/image_finger_print"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_welcome"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="76dp"
+                android:src="@drawable/ic_fingerprint_white_48dp" />
+
+            <TextView
+                android:id="@+id/tv_use_digital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_finger_print"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/big_gap"
+                android:gravity="center"
+                android:text="@string/text_use_digital"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/medium_text_size" />
+
+            <br.com.fernando.control_password.ui.widgets.CustomButton
+                android:id="@+id/bt_cancelar"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignEnd="@+id/tv_use_digital"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/tv_use_digital"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_rounded_white"
+                android:fontFamily="sans-serif"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:letterSpacing="0.12"
+                android:text="@string/cancel"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
 </ScrollView>

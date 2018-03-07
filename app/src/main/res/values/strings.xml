@@ -34,6 +34,10 @@
 
     <string name="text_use_digital">Use a digital para facilitar seu login.</string>
     <string name="cancel">Cancelar</string>
+    <string name="invalid_fingerprint">Impressão digital não reconhecida.</string>
+    <string name="prompt_site">SITE</string>
+    <string name="action_save">Salvar</string>
+    <string name="action_remove">Remover</string>
 
 
 </resources>

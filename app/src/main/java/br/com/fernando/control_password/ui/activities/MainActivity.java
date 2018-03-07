@@ -13,14 +13,15 @@ import br.com.fernando.control_password.R;
 import br.com.fernando.control_password.app.ControlPasswordApplication;
 import br.com.fernando.control_password.component.ControlPasswordComponent;
 import br.com.fernando.control_password.api.ControlPasswordService;
+import br.com.fernando.control_password.ui.fragments.LoginFragment;
+import br.com.fernando.control_password.ui.fragments.MainFragment;
+import br.com.fernando.control_password.util.FragmentUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.message)
-    TextView mTextMessage;
 
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
@@ -31,24 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private ControlPasswordComponent component;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-    };
+            = item -> {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        return true;
+                    case R.id.navigation_dashboard:
+                        return true;
+                    case R.id.navigation_notifications:
+                        return true;
+                }
+                return false;
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
         component.inject( this );
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        start();
     }
 
-    public ControlPasswordService getControlPasswordService() {
-        return controlPasswordService;
+    private void start() {
+        FragmentUtil.addFragment(getSupportFragmentManager(), R.id.fragment_container, new MainFragment());
     }
 }

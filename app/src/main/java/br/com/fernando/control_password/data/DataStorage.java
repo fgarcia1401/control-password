@@ -11,6 +11,8 @@ public final class DataStorage {
     private static final String TOKEN = "TOKEN";
     private static final String EMAIL = "EMAIL";
     private static final String PASSWORD = "PASSWORD";
+    private static final String FINGER_PRINT_AUTHENTICATE = "FINGER_PRINT_AUTHENTICATE";
+    private static final String FINGER_PRINT_FIRST_TIME = "FINGER_PRINT_FIRST_TIME";
 
 
     private static DataStorage instance;
@@ -74,6 +76,26 @@ public final class DataStorage {
             password = new String(data);
         }
         return password;
+    }
+
+    public void setFingerPrintFirstTime(Boolean fingerPrintAuthenticate) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(FINGER_PRINT_FIRST_TIME, fingerPrintAuthenticate);
+        editor.commit();
+    }
+
+    public boolean getFingerPrintFirstTime() {
+        return sharedPreferences.getBoolean(FINGER_PRINT_FIRST_TIME, true);
+    }
+
+    public void setFingerPrintAuthenticate(Boolean fingerPrintAuthenticate) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(FINGER_PRINT_AUTHENTICATE, fingerPrintAuthenticate);
+        editor.commit();
+    }
+
+    public boolean getFingerPrintAuthenticate() {
+        return sharedPreferences.getBoolean(FINGER_PRINT_AUTHENTICATE, false);
     }
 
     public final void clearOnLogoff() {

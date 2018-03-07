@@ -1,6 +1,5 @@
 package br.com.fernando.control_password.ui.fragments;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
@@ -14,27 +13,12 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.Switch;
 
-import com.hannesdorfmann.mosby.mvp.MvpFragment;
-import com.multidots.fingerprintauth.AuthErrorCodes;
 import com.multidots.fingerprintauth.FingerPrintAuthCallback;
 import com.multidots.fingerprintauth.FingerPrintAuthHelper;
-
-import javax.inject.Inject;
-
 import br.com.fernando.control_password.R;
-import br.com.fernando.control_password.api.ControlPasswordService;
-import br.com.fernando.control_password.app.ControlPasswordApplication;
-import br.com.fernando.control_password.component.ControlPasswordComponent;
 import br.com.fernando.control_password.data.DataStorage;
-import br.com.fernando.control_password.model.LoginRequest;
-import br.com.fernando.control_password.model.ResponseApi;
-import br.com.fernando.control_password.model.ResponseErrorApi;
-import br.com.fernando.control_password.presentation.contract.LoginView;
-import br.com.fernando.control_password.presentation.presenter.LoginPresenter;
-import br.com.fernando.control_password.ui.activities.RegisterActivity;
+import br.com.fernando.control_password.ui.activities.MainActivity;
 import br.com.fernando.control_password.util.FragmentUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,6 +29,14 @@ public class LoginFingerPrintFragment extends Fragment implements FingerPrintAut
 
 
     private FingerPrintAuthHelper mFingerPrintAuthHelper;
+
+    @BindView(R.id.coordinator_layout)
+    CoordinatorLayout mCoordinatorLayout;
+
+    public static LoginFingerPrintFragment newInstance() {
+        LoginFingerPrintFragment fragment = new LoginFingerPrintFragment();
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,9 +68,15 @@ public class LoginFingerPrintFragment extends Fragment implements FingerPrintAut
 
         mFingerPrintAuthHelper = FingerPrintAuthHelper.getHelper(getContext(), this);
 
+        DataStorage.getInstance(getContext()).setFingerPrintFirstTime(false);
 
         hideKeyboard();
+    }
 
+
+    @OnClick(R.id.bt_cancelar)
+    public void cancel() {
+        getFragmentManager().popBackStack();
     }
 
     public void hideKeyboard() {
@@ -87,38 +85,35 @@ public class LoginFingerPrintFragment extends Fragment implements FingerPrintAut
 
 
     @Override
-    public void onNoFingerPrintHardwareFound() {
-
-    }
+    public void onNoFingerPrintHardwareFound() {}
 
     @Override
-    public void onNoFingerPrintRegistered() {
-
-    }
+    public void onNoFingerPrintRegistered() {}
 
     @Override
-    public void onBelowMarshmallow() {
-
-    }
+    public void onBelowMarshmallow() {}
 
     @Override
     public void onAuthSuccess(FingerprintManager.CryptoObject cryptoObject) {
-
+        DataStorage.getInstance(getContext()).setFingerPrintAuthenticate(true);
+        callMain();
     }
 
     @Override
     public void onAuthFailed(int errorCode, String errorMessage) {
-        switch (errorCode) {    //Parse the error code for recoverable/non recoverable error.
-            case AuthErrorCodes.CANNOT_RECOGNIZE_ERROR:
-                //Cannot recognize the fingerprint scanned.
-                break;
-            case AuthErrorCodes.NON_RECOVERABLE_ERROR:
-                //This is not recoverable error. Try other options for user authentication. like pin, password.
-                break;
-            case AuthErrorCodes.RECOVERABLE_ERROR:
-                //Any recoverable error. Display message to the user.
-                break;
-        }
+        if (!TextUtils.isEmpty(errorMessage))
+        return;
+
+        Snackbar snackbar = Snackbar
+                .make(mCoordinatorLayout, getString(R.string.invalid_fingerprint) , Snackbar.LENGTH_LONG);
+        snackbar.getView().setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorError));
+        snackbar.show();
+
+    }
+
+    private void callMain(){
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
     }
 }
 
