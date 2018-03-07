@@ -2,6 +2,8 @@ package br.com.fernando.control_password.component;
 
 import br.com.fernando.control_password.ui.activities.MainActivity;
 import br.com.fernando.control_password.module.ControlPasswordModule;
+import br.com.fernando.control_password.ui.activities.RegisterActivity;
+import br.com.fernando.control_password.ui.fragments.LoginFragment;
 import dagger.Component;
 
 /**
@@ -13,5 +15,9 @@ import dagger.Component;
 public interface ControlPasswordComponent {
 
     void inject(MainActivity mainActivity);
+
+    void inject(RegisterActivity registerActivity);
+
+    void inject(LoginFragment loginFragment);
 
 }

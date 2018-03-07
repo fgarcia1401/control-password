@@ -16,9 +16,7 @@
 
 
     <!-- Fragments -->
-    <dimen name="line_spacing_extra_tv_warning_password">3dp</dimen>
-    <dimen name="line_spacing_extra_tv_accept_term">3dp</dimen>
-    <dimen name="line_spacing_extra_address_card">6dp</dimen>
+    <dimen name="line_spacing_extra_tv_warning_password">1dp</dimen>
     <dimen name="line_spacing_extra_subtitle">7dp</dimen>
     <dimen name="title_margin_top_fragments">40dp</dimen>
 

@@ -23,7 +23,7 @@ public class CompleteNamePresenter
         try {
             checkFullName(name);
             getView().enableButton(true);
-            registerRequest.setUserName(name.trim());
+            registerRequest.setName(name.trim());
         } catch (IllegalArgumentException e) {
             getView().enableButton(false);
         }

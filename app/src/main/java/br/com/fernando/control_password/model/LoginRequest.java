@@ -4,31 +4,34 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 
-public class RegisterRequest implements Parcelable {
+public class LoginRequest implements Parcelable {
 
-    public static final Creator<RegisterRequest> CREATOR = new Creator<RegisterRequest>() {
+    public static final Creator<LoginRequest> CREATOR = new Creator<LoginRequest>() {
         @Override
-        public RegisterRequest createFromParcel(Parcel source) {
-            return new RegisterRequest(source);
+        public LoginRequest createFromParcel(Parcel source) {
+            return new LoginRequest(source);
         }
 
         @Override
-        public RegisterRequest[] newArray(int size) {
-            return new RegisterRequest[size];
+        public LoginRequest[] newArray(int size) {
+            return new LoginRequest[size];
         }
     };
 
-    private String name;
     private String email;
     private String password;
 
 
-    public RegisterRequest() {
+    public LoginRequest() {
     }
 
-    protected RegisterRequest(Parcel in) {
+    public LoginRequest(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    protected LoginRequest(Parcel in) {
         this.email = in.readString();
-        this.name = in.readString();
         this.password = in.readString();
     }
 
@@ -40,9 +43,6 @@ public class RegisterRequest implements Parcelable {
         this.email = email;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getPassword() {
         return password;
@@ -60,7 +60,6 @@ public class RegisterRequest implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.email);
-        dest.writeString(this.name);
         dest.writeString(this.password);
     }
 }

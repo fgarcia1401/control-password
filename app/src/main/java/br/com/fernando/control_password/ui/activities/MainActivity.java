@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         component.inject( this );
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     }
 
+    public ControlPasswordService getControlPasswordService() {
+        return controlPasswordService;
+    }
 }

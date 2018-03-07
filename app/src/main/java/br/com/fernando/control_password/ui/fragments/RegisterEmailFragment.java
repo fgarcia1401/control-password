@@ -17,14 +17,11 @@ import com.hannesdorfmann.mosby.mvp.MvpFragment;
 
 import br.com.fernando.control_password.R;
 import br.com.fernando.control_password.model.RegisterRequest;
-import br.com.fernando.control_password.presentation.contract.CompleteNameView;
 import br.com.fernando.control_password.presentation.contract.RegisteredEmailView;
-import br.com.fernando.control_password.presentation.presenter.CompleteNamePresenter;
 import br.com.fernando.control_password.presentation.presenter.RegisteredEmailPresenter;
 import br.com.fernando.control_password.ui.activities.RegisterActivity;
 import br.com.fernando.control_password.ui.widgets.CustomButton;
 import br.com.fernando.control_password.util.FragmentUtil;
-import br.com.fernando.control_password.util.SimpleTextWatcher;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -37,7 +34,7 @@ public class RegisterEmailFragment
     private static final String REGISTER_REQUEST = "REGISTER_REQUEST";
 
     @BindView(R.id.ed_email)
-    EditText nameEdit;
+    EditText edEmail;
     @BindView(R.id.bt_continuar)
     CustomButton continueBtn;
     @BindView(R.id.ti_email)
@@ -55,7 +52,7 @@ public class RegisterEmailFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_register_complete_name, container, false);
+        View view = inflater.inflate(R.layout.fragment_register_email, container, false);
         initComponents(view);
         return view;
     }
@@ -68,12 +65,15 @@ public class RegisterEmailFragment
 
     @OnClick(R.id.bt_continuar)
     public void setEmail() {
-        Log.i("Teste", "Ir para a tela de senha");
-        //((RegisterActivity) getActivity()).goNext(RegisterEmailFragment.newInstance(getPresenter().getRegisterRequest()));
+        ((RegisterActivity) getActivity()).goNext(RegisterPasswordFragment.newInstance(getPresenter().getRegisterRequest()));
     }
 
     private void initComponents(View view) {
         ButterKnife.bind(this, view);
+
+        ((RegisterActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((RegisterActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         enableButton(false);
 
         emailTi.getEditText().setOnEditorActionListener((v, actionId, event) -> {
@@ -112,7 +112,7 @@ public class RegisterEmailFragment
             getPresenter().setRegisterRequest(getArguments().getParcelable(REGISTER_REQUEST));
         }
 
-        ((RegisterActivity) getActivity()).reqFocus(nameEdit);
+        ((RegisterActivity) getActivity()).reqFocus(edEmail);
     }
 
     @Override

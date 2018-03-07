@@ -33,9 +33,10 @@ public class ControlPasswordModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ControlPasswordService chatService = retrofit.create(ControlPasswordService.class);
 
-        return chatService;
+        ControlPasswordService controlPasswordService = retrofit.create(ControlPasswordService.class);
+
+        return controlPasswordService;
     }
 
     private okhttp3.OkHttpClient getOkHttpClient() {

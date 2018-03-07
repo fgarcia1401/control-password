@@ -16,7 +16,7 @@ public interface SiteRegisterDao {
     long insert(SiteRegister siteRegister);
 
     @Update
-    long update(SiteRegister siteRegister);
+    int update(SiteRegister siteRegister);
 
     @Query("DELETE FROM SiteRegister WHERE :id = SiteRegister.id")
     void deleteById(int id);

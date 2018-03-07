@@ -13,12 +13,12 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "API_CONTROL_PASSWORD_URL", "\"http://192.168.122.1:8080/\""
+            buildConfigField "String", "API_CONTROL_PASSWORD_URL", "\"https://dev.people.com.ai/mobile/api/v2/\""
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "API_CONTROL_PASSWORD_URL", "\"http://192.168.122.1:8080/\""
+            buildConfigField "String", "API_CONTROL_PASSWORD_URL", "\"https://dev.people.com.ai/mobile/api/v2/\""
         }
     }
     compileOptions {
@@ -57,4 +57,8 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.0.1'
 
     implementation 'com.hannesdorfmann.mosby:mvp:2.0.1'
+
+    implementation 'com.multidots:fingerprint-auth:1.0.1'
+
+
 }

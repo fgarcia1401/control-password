@@ -58,6 +58,9 @@ public class RegisterCompleteNameFragment
         nameEdit.addTextChangedListener(getWatcher());
         enableButton(false);
 
+        ((RegisterActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((RegisterActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         nameEdit.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 if (continueBtn.isEnabled()) {

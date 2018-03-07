@@ -10,20 +10,30 @@
     <string name="prompt_email">E-MAIL</string>
     <string name="title_welcome_frag_reg_email">Prazer, Fernando!</string>
     <string name="subtitle_frag_reg_email">Para acessar sua conta, nos informe seu e-mail.</string>
-    <string name="subtitle_frag_reg_senha">Nos informe sua senha (Mínimo 8 caracteres, dos
-        quais deve possuir no mínimo 1 letra, 1 número e 1 caractere especial).</string>
     <string name="title_welcome_frag_reg_password">Isso fica entre nos</string>
     <string name="prompt_senha">SENHA</string>
     <string name="action_finalize">FINALIZAR</string>
     <string name="error_email_register">E-mail inválido</string>
-    <string name="title_password_frag_reg">Isso fica entre nós</string>
-    <string name="subtitle_password_frag_reg">Para sua segurança temos algumas regrinhas para criar sua senha</string>
-    <string name="warning_password_register">A senha deve ter pelo menos 8 caracteres. Use ao menos um número, uma letra e um símbolo (!@#$%^&amp;*).</string>
+    <string name="title_password_frag_reg">Para sua segurança,</string>
+    <string name="subtitle_password_frag_reg">temos algumas regrinhas para criar sua senha!</string>
     <string name="prompt_password_registered">SENHA</string>
-    <string name="prompt_password">Senha</string>
+    <string name="warning_password_register">A senha deve ter pelo menos 10 caracteres. Use ao menos uma letra maiuscula/minuscula, um número e um caractere especial (!@#$%^&amp;*).</string>
+    <string name="error_password_register">Use ao menos um número, uma letra e símbolo (!@#$%^&amp;*).</string>
+
+    <string name="prompt_password">SENHA</string>
     <string name="login">ENTRAR</string>
     <string name="login_digital">ENTRAR COM DIGITAL</string>
     <string name="signup">CRIAR CONTA</string>
     <string name="txt_save_login">Lembrar dados</string>
+    <string name="message_waiting">carregando...</string>
+    <string name="error_save_user">Falha ao cadastrar usuário, tente novamente mais tarde!</string>
+
+    <string name="error_login">Falha ao logar, tente novamente mais tarde!</string>
+
+    <string name="error_validate_login">Para continuar favor informar seu nome e senha!</string>
+
+    <string name="text_use_digital">Use a digital para facilitar seu login.</string>
+    <string name="cancel">Cancelar</string>
+
 
 </resources>
