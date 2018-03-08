@@ -6,15 +6,21 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.graphics.Bitmap;
 
-@Entity
-public class SiteRegister {
+import java.io.Serializable;
 
-    @PrimaryKey
+@Entity
+public class SiteRegister implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     private long id;
     @ColumnInfo
     private String email;
     @ColumnInfo
+    private String site;
+    @ColumnInfo
     private String password;
+    @ColumnInfo
+    private String emailAccount;
 
 
     public long getId() {
@@ -39,5 +45,21 @@ public class SiteRegister {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSite() {
+        return site;
+    }
+
+    public void setSite(String site) {
+        this.site = site;
+    }
+
+    public String getEmailAccount() {
+        return emailAccount;
+    }
+
+    public void setEmailAccount(String emailAccount) {
+        this.emailAccount = emailAccount;
     }
 }

@@ -35,13 +35,11 @@ import butterknife.OnClick;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.multidots.fingerprintauth.FingerPrintAuthCallback;
 import com.multidots.fingerprintauth.FingerPrintAuthHelper;
 
-import org.w3c.dom.Text;
 
 import javax.inject.Inject;
 
@@ -157,7 +155,7 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
 
     @OnClick(R.id.tv_digital)
     public void callFingerPrint() {
-        ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance());
+        ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance(false));
     }
 
     private boolean validateLogin() {
@@ -199,7 +197,7 @@ public class LoginFragment extends MvpFragment<LoginView, LoginPresenter>
 
         boolean fingerPrintFirstTime = DataStorage.getInstance(getContext()).getFingerPrintFirstTime();
         if(fingerPrinterAvailable && fingerPrintFirstTime){
-            ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance());
+            ((LoginActivity) getActivity()).goNext(LoginFingerPrintFragment.newInstance(true));
         } else {
             this.callMain();
         }

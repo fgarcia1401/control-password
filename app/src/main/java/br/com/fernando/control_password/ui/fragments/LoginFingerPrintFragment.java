@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -27,14 +28,20 @@ import butterknife.OnClick;
 
 public class LoginFingerPrintFragment extends Fragment implements FingerPrintAuthCallback {
 
+    private static final String CALLED_BY_LOGIN = "CALLED_BY_LOGIN";
 
     private FingerPrintAuthHelper mFingerPrintAuthHelper;
 
     @BindView(R.id.coordinator_layout)
     CoordinatorLayout mCoordinatorLayout;
 
-    public static LoginFingerPrintFragment newInstance() {
+    private boolean calledByLoginSuccess;
+
+    public static LoginFingerPrintFragment newInstance(boolean calledByLoginSuccess) {
         LoginFingerPrintFragment fragment = new LoginFingerPrintFragment();
+        Bundle args = new Bundle();
+        args.putBoolean(CALLED_BY_LOGIN, calledByLoginSuccess);
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -44,6 +51,15 @@ public class LoginFingerPrintFragment extends Fragment implements FingerPrintAut
         View view = inflater.inflate(R.layout.fragment_login_fingerprint, container, false);
         initComponents(view);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if (getArguments() != null) {
+            calledByLoginSuccess = getArguments().getBoolean(CALLED_BY_LOGIN, false);
+        }
     }
 
     @Override
@@ -76,7 +92,11 @@ public class LoginFingerPrintFragment extends Fragment implements FingerPrintAut
 
     @OnClick(R.id.bt_cancelar)
     public void cancel() {
-        getFragmentManager().popBackStack();
+        if(calledByLoginSuccess){
+            callMain();
+        } else {
+            getFragmentManager().popBackStack();
+        }
     }
 
     public void hideKeyboard() {

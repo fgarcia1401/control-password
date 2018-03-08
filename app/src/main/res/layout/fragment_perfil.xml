@@ -1,0 +1,60 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/screen_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/big_gap"
+            android:paddingStart="@dimen/big_gap">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:src="@drawable/ic_account_circle_black_36dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="19dp"
+                android:fontFamily="sans-serif-light"
+                android:lineSpacingExtra="@dimen/line_spacing_extra_subtitle"
+                android:text="@string/title_welcome_frag_reg_email"
+                android:textColor="@color/colorSubtitle"
+                android:textSize="@dimen/normal_text_size" />
+
+
+            <br.com.fernando.control_password.ui.widgets.CustomButton
+                android:id="@+id/bt_logout"
+                style="@style/ButtonDefault"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_below="@+id/tv_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="73dp"
+                android:text="@string/logout" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</ScrollView>

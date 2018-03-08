@@ -42,7 +42,10 @@
                         android:nextFocusDown="@+id/input_email"
                         android:nextFocusForward="@+id/input_email"
                         android:textColor="@android:color/black"
-                        android:backgroundTint="@android:color/black"/>
+                        android:backgroundTint="@android:color/black"
+                        android:importantForAutofill="noExcludeDescendants"
+
+                        />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -63,7 +66,9 @@
                         android:nextFocusDown="@+id/input_password1"
                         android:nextFocusForward="@+id/input_password1"
                         android:textColor="@android:color/black"
-                        android:backgroundTint="@android:color/black"/>
+                        android:backgroundTint="@android:color/black"
+                        android:importantForAutofill="noExcludeDescendants"
+                        />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -78,14 +83,15 @@
                     <EditText
                         android:id="@+id/input_password"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/input_email1"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/input_email"
+                        android:backgroundTint="@android:color/black"
                         android:hint="@string/prompt_password"
                         android:imeOptions="actionDone"
+                        android:importantForAutofill="noExcludeDescendants"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="@android:color/black"
-                        android:backgroundTint="@android:color/black" />
+                        android:textColor="@android:color/black" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -104,7 +110,8 @@
                     android:layout_width="@dimen/button_width"
                     android:layout_height="@dimen/button_height"
                     android:layout_marginBottom="@dimen/button_margin"
-                    android:text="@string/action_remove" />
+                    android:text="@string/action_remove"
+                    android:visibility="invisible"/>
 
             </LinearLayout>
 

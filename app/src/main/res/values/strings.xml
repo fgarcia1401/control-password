@@ -38,6 +38,10 @@
     <string name="prompt_site">SITE</string>
     <string name="action_save">Salvar</string>
     <string name="action_remove">Remover</string>
+    <string name="signup_sucesso">Site cadastrado com sucesso!</string>
+    <string name="fields_required">Favor informar todos os campos para cadastrar!</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="logout">Logout</string>
 
 
 </resources>
