@@ -1,7 +1,7 @@
 package br.com.fernando.control_password.ui.widgets;
 
 /**
- * Created by tqi_pfarias on 28/04/17.
+ * Created by Fernando
  */
 
 public class BounceInterpolator implements android.view.animation.Interpolator {

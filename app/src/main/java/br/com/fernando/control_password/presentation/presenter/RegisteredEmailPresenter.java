@@ -10,7 +10,7 @@ import br.com.fernando.control_password.presentation.contract.CompleteNameView;
 import br.com.fernando.control_password.presentation.contract.RegisteredEmailView;
 
 /**
- * Created by tqi_coliveira on 28/06/2017.
+ * Created by Fernando
  */
 
 public class RegisteredEmailPresenter

@@ -3,7 +3,7 @@ package br.com.fernando.control_password.model;
 import java.io.Serializable;
 
 /**
- * Created by fernando on 05/03/18.
+ * Created by Fernando
  */
 
 public class ResponseApi implements Serializable {

@@ -7,7 +7,7 @@ import br.com.fernando.control_password.model.RegisterRequest;
 import br.com.fernando.control_password.presentation.contract.CompleteNameView;
 
 /**
- * Created by tqi_coliveira on 28/06/2017.
+ * Created by Fernando
  */
 
 public class CompleteNamePresenter

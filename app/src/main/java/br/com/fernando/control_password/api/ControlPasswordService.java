@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Url;
 
 /**
- * Created by tqiuser on 19/02/18.
+ * Created by Fernando
  */
 
 public interface ControlPasswordService {

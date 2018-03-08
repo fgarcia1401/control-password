@@ -6,7 +6,7 @@ import br.com.fernando.control_password.model.ResponseApi;
 import br.com.fernando.control_password.model.ResponseErrorApi;
 
 /**
- * Created by tqi_coliveira on 03/04/2017.
+ * Created by Fernando
  */
 
 public interface LoginView extends MvpView {
